@@ -1,0 +1,103 @@
+PLANEJAMENTO DO ENDEREÇAMENTO IP 
+
+*O QUE É O ENDEREÇAMENTO IP?* 
+O endereçamento IP (Internet Protocol) é o sistema responsável por identificar cada 
+dispositivo conectado a uma rede, permitindo a comunicação entre eles. Assim 
+como uma casa possui um endereço para receber correspondências, computadores, 
+celulares, impressoras, servidores e outros equipamentos também precisam de um 
+endereço único para enviar e receber informações corretamente. 
+
+Durante a comunicação na rede, os dados são enviados em pacotes que contêm o 
+endereço de origem e o endereço de destino, garantindo que as informações 
+cheguem ao dispositivo correto. Sem o endereçamento IP, essa comunicação não 
+seria possível. 
+
+Atualmente existem duas versões do protocolo: o IPv4 e o IPv6. O IPv4 é o mais 
+utilizado e possui endereços no formato 192.168.10.1. Já o IPv6 foi criado para 
+suprir a limitação de endereços do IPv4, oferecendo uma quantidade muito maior de 
+combinações e melhor suporte para o crescimento da internet. 
+
+Neste projeto, ambos os protocolos serão utilizados. O IPv4 garante compatibilidade 
+com os equipamentos atuais, enquanto o IPv6 prepara a infraestrutura para futuras 
+expansões da universidade. 
+
+*PLANEJAMENTO IPV4*
+O planejamento do IPv4 tem como objetivo organizar os endereços da rede para que cada 
+setor da universidade possua sua própria sub-rede. Essa divisão facilita a administração da 
+infraestrutura, melhora a organização e reduz conflitos de endereçamento. 
+Para este projeto, foi adotada a seguinte distribuição: 
+
+Setor            Rede IPv4      Máscara 
+
+Administração   192.168.10.0      /24
+Área Acadêmica  192.168.20.0     /24  
+Pesquisa        192.168.30.0     /24
+Biblioteca      192.168.40.0     /24 
+Segurança       192.168.50.0     /24 
+
+
+
+Cada rede suporta até 254 dispositivos, quantidade suficiente para atender às 
+necessidades atuais dos setores e permitir futuras ampliações. Essa organização 
+também facilita a identificação de falhas e torna o gerenciamento da rede mais 
+eficiente. 
+
+*PLANEJAMENTO IPV6*
+Além do IPv4, o projeto também prevê a utilização do IPv6, protocolo desenvolvido 
+para atender à crescente demanda por endereços IP na internet. 
+Cada setor recebeu um prefixo IPv6 específico, mantendo a mesma organização 
+utilizada no IPv4 
+
+Setor            Rede IPv6
+
+Administração   2001:db8:10::/64    
+Área Acadêmica  2001:db8:20::/64   
+Pesquisa        2001:db8:30::/64    
+Biblioteca      2001:db8:40::/64    
+Segurança       2001:db8:50::/64    
+
+
+
+A adoção do IPv6 garante maior capacidade de expansão, melhor compatibilidade 
+com novas tecnologias e prepara a universidade para o crescimento previsto nos 
+próximos anos.  
+
+*EXPLICAÇÃO DAS MÁSCARA (/24)* 
+Neste projeto foi utilizada a máscara /24 (255.255.255.0) para todas as sub-redes. 
+Essa configuração permite que cada setor tenha até 254 endereços IP disponíveis, 
+quantidade suficiente para computadores, impressoras, servidores, câmeras e 
+outros dispositivos. 
+
+A utilização da mesma máscara em todos os setores facilita a configuração e o 
+gerenciamento da rede. Além disso, a divisão em sub-redes reduz o tráfego de 
+broadcast, melhorando o desempenho da comunicação entre os dispositivos. 
+Por esses motivos, a máscara /24 foi considerada adequada para a proposta deste 
+projeto. 
+
+SEGMENTAÇÃO DE REDE 
+A segmentação da rede consiste em dividir a infraestrutura em sub-redes de acordo 
+com a função de cada setor da universidade. Dessa forma, Administração, Área 
+Acadêmica, Pesquisa, Biblioteca e Segurança possuem redes independentes, 
+tornando a comunicação mais organizada. 
+
+Essa divisão reduz o tráfego desnecessário entre os setores, facilita a administração 
+da infraestrutura e aumenta a segurança, permitindo aplicar políticas específicas 
+para cada área quando necessário. 
+
+Além disso, a segmentação facilita futuras ampliações da rede, já que novos 
+equipamentos podem ser adicionados aos setores sem comprometer o 
+funcionamento dos demais. 
+
+RELAÇÃO COM A TOPOLOGIA HÍBRIDA 
+O planejamento do endereçamento IP foi desenvolvido de acordo com a topologia 
+híbrida escolhida para o projeto. Como cada setor possui características diferentes, 
+foi necessário organizar a rede em sub-redes independentes. 
+
+Os setores de Administração, Área Acadêmica e Biblioteca utilizam topologia estrela, 
+enquanto a Área de Pesquisa utiliza uma estrutura em malha para garantir maior 
+disponibilidade. Já o setor de Segurança utiliza VLANs para aumentar o controle e o 
+isolamento do tráfego. 
+
+A utilização conjunta do IPv4 e do IPv6, aliada à divisão por sub-redes, torna a 
+infraestrutura mais organizada, segura e preparada para atender tanto às 
+necessidades atuais quanto ao crescimento futuro da universidade. 

@@ -1,0 +1,101 @@
+Infraestrutura - Topologia Híbrida
+
+
+ CABEAMENTO : Para o cabeamento, a melhor opção, considerando velocidade e eficiência é utilizar fibra óptica e cabos simultaneamente:
+
+
+Fibra Óptica no Backbone
+
+  - Função: Interligar o Switch Core (central) aos switches de distribuição ou de acesso localizados em setores distantes.
+
+    Modelo: Cabo de Fibra Óptica Multimodo (MM). Multimodo OM3/OM4 é excelente para ambientes internos/campi de até 300-500 metros.
+
+    Motivos da Escolha:
+- Possui altíssima _velocidade_ e Banda Larga, suporta taxas de transmissão de 10 Gbps a 100 Gbps, evitando gargalos no tráfego que vem de todos os setores simultaneamente.
+- Por transmitir dados via luz, a fibra é totalmente imune a interferências eletromagnéticas (EMI) causadas por lâmpadas fluorescentes, motores ou fiação elétrica.
+- Funciona a longas distâncias, permite cobrir áreas muito maiores que o cabo metálico sem perda de sinal, a atenuação.
+
+A fibra óptica é indispensável para fazer a interligação física subterrânea ou aérea entre os prédios distantes da universidade, conectando os switches de cada bloco ao Switch Core central no CPD (Centro de Processamento de Dados), mantendo a latência baixa e a velocidade gigabit entre os blocos.
+
+
+Cabo UTP Cat6 nos Setores
+
+  - Função: Conectar os dispositivos finais (computadores, impressoras, telefones IP) aos switches de acesso de cada setor.
+
+    Motivos da Escolha:
+- Tem um excelente custo-benefício, pois é muito mais barato e fácil de instalar e manusear do que a fibra óptica para a ponta final da rede.
+- Suporta velocidades de até 1 Gbps (Gigabit Ethernet) em distâncias de até 100 metros, e até 10 Gbps em distâncias curtas (até 55 metros), o que atende perfeitamente à demanda de estações de trabalho comuns.
+- Alta flexibilidade e conectorização, pois utiliza o padrão RJ-45, universal e de fácil manutenção.
+
+As salas de aula administrativas, os laboratórios de informática acadêmicos e os computadores de pesquisa da biblioteca serão conectados via Cat6. Isso garante que, mesmo que o Wi-Fi esteja sob uso pesado pelos alunos nos corredores, os computadores dos laboratórios de aula prática e os sistemas da secretaria continuem com 1 Gbps dedicado e estável, sem sofrer interferência.
+
+
+EQUIPAMENTOS (Hardware)
+
+
+Switch Core modelo Cisco Catalyst 9300 Series
+
+  - Função: Centralizar todo o tráfego da rede, interligando os servidores, o firewall e os switches de acesso dos setores.
+
+    Motivos da Escolha
+- Possui portas de alta velocidade (Uplinks de 10GbE/40GbE em fibra óptica) para receber as conexões do backbone sem gargalos. Conta com alta capacidade de processamento de pacotes (Layer 3, permitindo roteamento interno) e fontes de alimentação redundantes para garantir que a rede não caia se uma tomada falhar.
+
+
+Switches de Acesso nos Setores: Ubiquiti UniFi Switch Pro 24 ou mesmo o 48 PoE (Power over Ethernet)
+
+  - Função: Conectar diretamente os computadores dos usuários e os Access Points de cada setor.
+
+    Motivos da Escolha: Oferecem portas Gigabit (10/100/1000 Mbps) para os usuários e portas SFP+ (fibra) para subir o sinal até o Switch Core. O suporte a PoE, a energia pelo cabo de rede, é essencial para alimentar os Access Points e telefones IP diretamente pelo cabo de rede, dispensando tomadas elétricas perto deles.
+
+
+Roteador Cisco ISR 1100 Series ou Ubiquiti EdgeRouter.
+
+  - Função: Fazer a ponte de comunicação entre a rede interna da sua empresa/escola e a internet externa, o provedor.
+ 
+    Motivos da Escolha: Dispositivo robusto dedicado exclusivamente a processar tabelas de rotas externas, garantindo estabilidade e suporte a múltiplos links de internet (redundância/link dedicado).
+
+
+Firewall Fortinet FortiGate 60F (Next-Generation Firewall - NGFW)
+
+  - Função: Proteger a rede interna contra invasões, controlar acessos, bloquear sites indesejados e gerenciar VPNs para acesso remoto seguro.
+
+    Motivos da Escolha: Centraliza o controle de segurança em um único hardware dedicado, analisando o tráfego em tempo real sem prejudicar o desempenho da internet interna.
+
+O Firewall também é essencial para garantir a segurança acadêmica. Em uma rede com milhares de alunos e dispositivos pessoais conectados, o Firewall é quem vai isolar a rede administrativa, onde ficam notas, sistemas de matrícula e dados de servidores, da rede pública dos alunos, além de aplicar políticas de controle de banda para evitar que downloads pesados de alguns usuários derrubem a internet do campus inteiro.
+
+
+Access Points (Pontos de Acesso Wi-Fi) Ubiquiti UniFi U6 Pro (Wi-Fi 6).
+
+  - Função: Prover conexão sem fio de alta performance para notebooks, smartphones e dispositivos móveis na rede corporativa.
+
+    Motivos da Escolha: O padrão Wi-Fi 6 (802.11ax) permite maior densidade de dispositivos conectados simultaneamente sem perda de velocidade. Eles podem ser gerenciados de forma centralizada, criando uma rede única onde o usuário pode andar pelo espaço físico sem perder a conexão (roaming).
+
+Além disso, em uma universidade, o Wi-Fi é o principal meio de acesso dos alunos. Os Access Points escolhidos são cruciais porque suportam alta densidade de conexões simultâneas por equipamento. Sem um AP de nível corporativo ou industrial, o Wi-Fi dos blocos de salas de aula cairia constantemente devido ao número de celulares conectados ao mesmo tempo.
+
+
+Servidores Dell PowerEdge R450 (Servidor de Rack).
+
+  - Função: Hospedar serviços locais essenciais da rede (como Active Directory/controlador de domínio, servidor de arquivos, DNS/DHCP interno, banco de dados ou sistemas de backup).
+
+    Motivos da Escolha: Equipamento projetado para funcionar 24 horas por dia, 7 dias por semana. Possui discos rígidos em RAID (redundância de dados se um disco queimar) e duas fontes de energia físicas.
+
+Os servidores locais da UFMG Betim servirão para hospedar sistemas de autenticação de laboratórios, cache local de páginas acadêmicas (para economizar internet externa) e espelhamento de repositórios de pesquisa.
+
+FUNCIONAMENTO
+
+Basicamente, o dado sai do computador do usuário pelo cabo UTP Cat6, entra no Switch de Acesso do setor, sobe pelo Backbone de Fibra Óptica até o Switch Core, passa pelo Firewall e pelo Roteador antes de ir para a internet.
+
+
+Referências Bibliográficas
+
+Cisco Catalyst 9300 Series Switches Data Sheet. San Jose: Cisco Systems, 2026. Disponível em: https://www.cisco.com. Acesso em: 14 jul. 2026.
+
+FORTINET. FortiGate 60F Series Next-Generation Firewall Datasheet. Sunnyvale: Fortinet, 2026. Disponível em: https://www.fortinet.com. Acesso em: 14 jul. 2026.
+
+UBIQUITI NETWORKS. UniFi Switch Pro 24 PoE Technical Specifications. New York: Ubiquiti, 2026. Disponível em: https://www.ui.com. Acesso em: 14 jul. 2026.
+
+UBIQUITI NETWORKS. UniFi Access Point WiFi 6 Pro (U6-Pro) Datasheet. New York: Ubiquiti, 2026. Disponível em: https://www.ui.com. Acesso em: 14 jul. 2026.
+
+FURUKAWA ELECTRIC LATAM. Cabo de Rede GigaLan Cat. 6 U/UTP: folha de especificações técnicas. Curitiba: Furukawa, 2026. Disponível em: https://www.furukawaelectric.com.br. Acesso em: 14 jul. 2026.
+
+FURUKAWA ELECTRIC LATAM. Cabo Optico Multimodo OM4 MM (50/125) CFOT: folha de especificações técnicas. Curitiba: Furukawa, 2026. Disponível em: https://www.furukawaelectric.com.br. Acesso em: 14 jul. 2026.

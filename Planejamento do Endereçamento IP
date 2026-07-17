@@ -62,7 +62,7 @@ A adoção do IPv6 garante maior capacidade de expansão, melhor compatibilidade
 com novas tecnologias e prepara a universidade para o crescimento previsto nos 
 próximos anos.  
 
-*EXPLICAÇÃO DAS MÁSCARA (/24)* 
+*EXPLICAÇÃO DAS MÁSCARA (/24 e /64)* 
 Neste projeto foi utilizada a máscara /24 (255.255.255.0) para todas as sub-redes. 
 Essa configuração permite que cada setor tenha até 254 endereços IP disponíveis, 
 quantidade suficiente para computadores, impressoras, servidores, câmeras e 
@@ -71,8 +71,14 @@ outros dispositivos.
 A utilização da mesma máscara em todos os setores facilita a configuração e o 
 gerenciamento da rede. Além disso, a divisão em sub-redes reduz o tráfego de 
 broadcast, melhorando o desempenho da comunicação entre os dispositivos. 
+
 Por esses motivos, a máscara /24 foi considerada adequada para a proposta deste 
 projeto. 
+
+No IPv6, o /64 indica que os primeiros 64 bits representam a parte da rede, 
+enquanto os outros 64 identificam os dispositivos (hosts). Esse é o padrão 
+utilizado em redes locais, pois facilita a organização da rede e garante
+compatibilidade com diversos recursos do IPv6.
 
 SEGMENTAÇÃO DE REDE 
 A segmentação da rede consiste em dividir a infraestrutura em sub-redes de acordo 

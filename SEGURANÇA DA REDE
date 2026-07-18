@@ -1,0 +1,27 @@
+ Firewall: sistema que controla e filtra o tráfego da rede, bloqueando acessos indevidos e protegendo contra ataques.*
+
+VLAN: Tecnologia que divide uma rede física em várias redes virtuais, separando setores e aumentando a segurança.
+
+NAC: Mecanismo que verifica e controla quais usuários e dispositivos podem acessar a rede.
+
+Backups: Cópias de segurança dos dados para permitir sua recuperação em caso de falhas ou perdas.
+
+Controle de acesso: Conjunto de regras que define quais usuários têm permissão para acessar determinados recursos.
+
+Isolamento de rede: Separação de dispositivos e setores para evitar a propagação de falhas, vírus ou invasões entre diferentes áreas da rede.
+
+DEFINIÇÃO DAS VLANS:
+VLAN 10 – Administração: Destinada aos computadores da secretaria, diretoria e setores administrativos.* 
+
+VLAN 20 – Professores: Utilizada pelos computadores e dispositivos dos professores.
+
+VLAN 30 – Alunos: Destinada aos laboratórios de informática e dispositivos dos estudantes.
+
+VLAN 40 – Visitantes: Rede exclusiva para visitantes, permitindo apenas acesso à internet.* 
+
+VLAN 50 – Servidores: Reservada para servidores, bancos de dados e sistemas institucionais.
+
+VLAN 60 – Segurança: Utilizada para câmeras de monitoramento, sistemas de controle de acesso e outros dispositivos de segurança.Essa divisão permite maior organização, segurança e isolamento da rede, impedindo que usuários de um setor acessem recursos de outro sem autorização.
+ POLÍTICA DE REDUNDÂNCIA DA INFRAESTRUTURA DE REDEP
+
+ara garantir a disponibilidade dos serviços da universidade e suportar o crescimento de 3.000 para até 15.000 usuários, será implementada uma arquitetura de redundância nos componentes críticos da rede.Redundância de Internet: Utilização de dois provedores de internet distintos (link principal e link secundário), permitindo continuidade do acesso em caso de falha de um dos provedores.Redundância de Equipamentos: Implantação de switches centrais e firewalls em alta disponibilidade (ativo-passivo ou ativo-ativo), garantindo a continuidade dos serviços caso um equipamento apresente defeito.Redundância de Servidores: Utilização de servidores em cluster e virtualização, permitindo que outro servidor assuma as funções automaticamente em caso de falha.Redundância de Energia: Instalação de nobreaks e geradores para manter o funcionamento da infraestrutura durante quedas de energia.Redundância de Dados: Realização de backups automáticos e armazenamento de cópias em local externo ou em nuvem, assegurando a recuperação das informações em situações de desastre.Essa estratégia reduz pontos únicos de falha (Single Point of Failure – SPOF) e aumenta a confiabilidade, disponibilidade e continuidade operacional da rede 

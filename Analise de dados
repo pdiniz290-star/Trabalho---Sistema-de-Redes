@@ -1,0 +1,89 @@
+GESTÃO E PLANEJAMENTO DO PROJETO 
+
+
+. TOPOLOGIA HIBRIDA
+Para a implantação da infraestrutura de redes da UFMG Betim foi escolhida a 
+Topologia Híbrida, pois ela combina diferentes topologias em uma única rede, 
+permitindo utilizar a melhor solução para cada setor do campus. 
+Essa escolha oferece maior desempenho, segurança, disponibilidade e 
+facilidade de expansão, atendendo às necessidades atuais da universidade e 
+preparando a infraestrutura para o crescimento futuro. 
+A UFMG Betim foi projetada para atender inicialmente cerca de 3.000 alunos, 
+com previsão de expansão para 10.000 alunos nos próximos 15 anos. Por esse 
+motivo, uma única topologia não seria suficiente para atender todos os ambientes de 
+forma eficiente. 
+A Topologia Híbrida permite utilizar diferentes arquiteturas conforme a 
+necessidade de cada setor, proporcionando melhor desempenho, organização da 
+rede e facilidade de crescimento. 
+
+.Estrutura da Rede
+A arquitetura da rede será organizada da seguinte forma: - Internet -  Roteador -  Firewall - Core Switch -  Switches de Distribuição 
+
+Setores 
+
+1- Administração 
+2- Área Acadêmica 
+3- Pesquisa 
+4- Biblioteca 
+5- Segurança 
+
+O Core Switch será responsável por centralizar todo o tráfego da rede e 
+distribuir a comunicação para os switches de distribuição, que encaminharão os dados 
+para cada setor do campus de forma organizada e eficiente. 
+Aplicação da Topologia Híbrida 
+
+1- Administração 
+Neste setor será adotada uma arquitetura baseada em Topologia Estrela, pois 
+facilita o gerenciamento da rede, a manutenção dos computadores e reduz o impacto 
+caso ocorra falha em um equipamento. 
+
+2- Área Acadêmica 
+Também será adotada uma arquitetura baseada em Topologia Estrela, devido 
+ao grande número de computadores, laboratórios e salas de aula, permitindo fácil 
+expansão e administração da rede. 
+
+3- Área de Pesquisa 
+Na área de pesquisa será adotada uma arquitetura baseada em Topologia em 
+Malha, garantindo maior disponibilidade dos serviços. Caso um link apresente falha, 
+outro caminho poderá manter a comunicação dos laboratórios científicos. 
+
+4- Biblioteca 
+Será utilizada uma arquitetura baseada em Topologia Estrela, proporcionando 
+estabilidade para computadores, pontos de consulta e acesso Wi-Fi dos estudantes. 
+
+5- Segurança 
+A infraestrutura física será baseada em topologia em estrela, com segmentação 
+lógica por VLANs, separando câmeras IP, controle de acesso e demais equipamentos 
+críticos da rede dos usuários. Essa segmentação aumenta a segurança, melhora o 
+gerenciamento e impede acessos não autorizados. 
+
+
+• VANTAGENS DA TOPOLOGIA HIBRIDA
+. Grande flexibilidade. 
+. Melhor desempenho da rede. 
+. Alta disponibilidade. 
+. Facilidade de manutenção. 
+. Facilidade para expansão futura. 
+. Permite utilizar diferentes tecnologias em cada setor. 
+. Maior segurança por meio da segmentação por VLAN. 
+
+• DESVANTAGENS 
+. Projeto mais complexo. 
+. Implantação mais trabalhosa. 
+. Necessidade de equipamentos gerenciáveis. 
+. Custo inicial superior ao de topologias simples. 
+
+• ESCABILIDADE 
+A arquitetura foi desenvolvida para permitir o crescimento da universidade sem 
+necessidade de reconstrução da rede. 
+Novos blocos poderão ser adicionados conectando novos switches ao 
+backbone existente, mantendo a organização da infraestrutura e garantindo 
+capacidade para aproximadamente 10.000 alunos, conforme a previsão de expansão 
+da UFMG Betim. 
+
+• MOTIVO DA ESCOLHA DA TOPOLOGIA 
+A Topologia Híbrida foi escolhida por oferecer o melhor equilíbrio entre 
+desempenho, segurança, disponibilidade e escalabilidade. 
+Sua combinação de diferentes topologias permite atender às necessidades 
+específicas de cada setor do campus, tornando a infraestrutura preparada para 
+suportar o crescimento da UFMG Betim durante os próximos anos.
